@@ -1,24 +1,32 @@
-<project>
+<project name="Battleship" basedir="." default="battleship">
+    <property name="dir.src"  value="src"/>
+    <property name="dir.build" value="build"/>
+    <property name="dir.dist" value="dist" />
+    <property name="main-class" value="battleship.Battleship" />
 
     <target name="clean">
-        <delete dir="build" />
-        <delete dir="dist" />
-    </target>
-    <target name="compile">
-        <mkdir dir="build"/>
-        <javac srcdir="src" destdir="build"/>
+        <delete dir="${dir.build}" />
+        <delete dir="${dir.dist}" />
     </target>
 
-    <target name="jar">
-        <mkdir dir="dist"/>
-        <jar destfile="dist/Battleship.jar" basedir="build">
+    <target name="compile">
+        <mkdir dir="${dir.build}"/>
+        <javac srcdir="${dir.src}" destdir="${dir.build}"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${dir.dist}"/>
+        <jar destfile="${dir.dist}/${ant.project.name}.jar" basedir="${dir.build}">
             <manifest>
-                <attribute name="Main-Class" value="battleship.Battleship"/>
+                <attribute name="Main-Class" value="${main-class}"/>
             </manifest>
         </jar>
     </target>
 
-    <target name="run">
-        <java jar="dist/Battleship.jar" fork="true"/>
+    <target name="run" depends="jar">
+        <java jar="${dir.dist}/${ant.project.name}.jar" fork="true"/>
     </target>
+
+    <target name="clean-build" depends="clean, jar"/>
+    <target name="main" depends="clean, run"/>
 </project>
