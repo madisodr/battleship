@@ -179,6 +179,7 @@ public class _BattleshipPlayer implements BattleshipPlayer {
         char shot = ' ';
         boolean valid = false;
         int row, col;
+        int stuckCounter = 0;
 
 
 
@@ -258,6 +259,17 @@ public class _BattleshipPlayer implements BattleshipPlayer {
                         } else {
                             valid = randomShot(guess, opponentsBoard);
                         }
+
+                        stuckCounter++;
+                        if(stuckCounter ==5)
+                            valid = randomShot(guess, opponentsBoard);
+
+                        if (stuckCounter > 5) {
+                            System.out.println("Unable to find a valid shot.");
+                            new Exception().printStackTrace();
+                            System.exit(0);
+                        }
+
 
                     } while(valid == false);
                 } else { // Didn't find a hit yet. So guess randomly
