@@ -1,2 +1,2 @@
 language: java
-script: ant battleship
+script: ant main
