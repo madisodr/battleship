@@ -6,6 +6,9 @@ Built using java 1.7.0
 ## Requirements
   - Requires Java (built using java-1.7.0)
   - Ant
+  - libc-bin 
+  - libc-dev-bin 
+  - libc6-dev
   
 ## Build Instructions
 ### Compile
