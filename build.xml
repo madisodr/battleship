@@ -1,4 +1,4 @@
-<project name="Battleship" basedir="." default="battleship">
+<project name="Battleship" basedir="." default="main">
     <property name="dir.src"  value="src"/>
     <property name="dir.build" value="build"/>
     <property name="dir.dist" value="dist" />
