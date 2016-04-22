@@ -1,16 +1,17 @@
 <project>
 
     <target name="clean">
-        <delete dir="build"/>
+        <delete dir="build" />
+        <delete dir="dist" />
     </target>
     <target name="compile">
-        <mkdir dir="build/classes"/>
-        <javac srcdir="src" destdir="build/classes"/>
+        <mkdir dir="build"/>
+        <javac srcdir="src" destdir="build"/>
     </target>
 
     <target name="jar">
-        <mkdir dir="build/jar"/>
-        <jar destfile="dist/Battleship.jar" basedir="build/classes">
+        <mkdir dir="dist"/>
+        <jar destfile="dist/Battleship.jar" basedir="build">
             <manifest>
                 <attribute name="Main-Class" value="battleship.Battleship"/>
             </manifest>
