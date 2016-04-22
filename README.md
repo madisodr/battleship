@@ -2,6 +2,7 @@
 A homework project I decided to take further then the requirements. I got an A on it. I plan on adding some smarter AI to it at some point.
 
 Built using java 1.7.0
+
 [![Build Status](https://travis-ci.org/madisodr/battleship.svg?branch=master)](https://travis-ci.org/madisodr/battleship)
 
 ## Requirements
