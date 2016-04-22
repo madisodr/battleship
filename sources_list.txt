@@ -1,4 +1,0 @@
-./src/battleship/Battleship.java
-./src/battleship/Board.java
-./src/battleship/players/BattleshipPlayer.java
-./src/battleship/players/zholt_BattleshipPlayer.java

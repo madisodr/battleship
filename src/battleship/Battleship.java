@@ -5,7 +5,7 @@
  */
 package battleship;
 
-import battleship.players.zholt_BattleshipPlayer;
+import battleship.players._BattleshipPlayer;
 
 /**
  *
@@ -18,8 +18,8 @@ public class Battleship {
      */
    public static void main(String[] args) {
         System.out.println("Testing");
-        zholt_BattleshipPlayer a = new zholt_BattleshipPlayer();
-        zholt_BattleshipPlayer b = new zholt_BattleshipPlayer();
+        _BattleshipPlayer a = new _BattleshipPlayer();
+        _BattleshipPlayer b = new _BattleshipPlayer();
         Board aBoard = a.hideShips();
         System.out.println("Player A's Board");
         System.out.println(aBoard);
