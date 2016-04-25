@@ -1,3 +1,21 @@
+/* 
+* Author: Daniel R Madison
+* Copyright (C) 2016
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+* 
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 package battleship.players;
 
 import battleship.Board;
@@ -11,7 +29,8 @@ import java.util.HashMap;
 public class _BattleshipPlayer implements BattleshipPlayer {
 
     // Create a static map class of ships and their respective sizes. 
-    // Allows for cleaner code throughout.
+    // Allows for cleaner code throughout. This also saves on space 
+    // when multiple instances of _BattleshipPlayer are created.
     private static final Map<Character, Integer> ships;
     static { 
         ships = new HashMap<Character, Integer>();
@@ -325,7 +344,13 @@ public class _BattleshipPlayer implements BattleshipPlayer {
             }
         }
     }
-
+    
+    /** randomShot - A method used to randomly pick a point on the board 
+     * to make a shot at.
+     *
+     * TODO: Make it smarter so it makes shots typically toward the center
+     * of the board as this is where ships are more likely to be placed.
+     */
     public boolean randomShot(Coordinate guess, Board opponentsBoard) { 
         int row = generator.nextInt(HEIGHT);
         int col = generator.nextInt(WIDTH);
@@ -350,9 +375,11 @@ public class _BattleshipPlayer implements BattleshipPlayer {
         return true;
     }
 
-    /**
-     * validShot - This method checks to make sure where you are aiming is
-     * a valid spot to shoot and that you havn't made that shot before.
+    /** 
+     * validShot - This method is called to check to see if the shot you 
+     * make is valid or not. The qualifiers to determine if it is a valid
+     * shot are checking to see if you have shot within bounds of the board
+     * and whether or not you've made a shot at those coordinates before.
      */
     public boolean validShot(Coordinate c) {
 
