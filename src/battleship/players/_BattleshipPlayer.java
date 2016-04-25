@@ -26,7 +26,7 @@ import java.util.Random;
 import java.util.Map;
 import java.util.HashMap;
 
-public class _BattleshipPlayer implements BattleshipPlayer {
+public class _BattleshipPlayer {
 
     // Create a static map class of ships and their respective sizes. 
     // Allows for cleaner code throughout. This also saves on space 
@@ -84,7 +84,6 @@ public class _BattleshipPlayer implements BattleshipPlayer {
      * twice in a row; i.e., two successive calls to your hideShips() method
      * must always return *different* answers!
      */
-    @Override
     public Board hideShips() {
         boolean good;
         Board mBoard = null; 
@@ -192,7 +191,6 @@ public class _BattleshipPlayer implements BattleshipPlayer {
      * *once*: trying to fire more than once during your turn will be detected
      * as cheating.
      */
-    @Override
     public void go(Board opponentsBoard) {
         Coordinate guess = null;
         char shot = ' ';
@@ -405,7 +403,6 @@ public class _BattleshipPlayer implements BattleshipPlayer {
      * beginning. It gives you a chance to reset any instance variables you may
      * have created, so that your BattleshipPlayer starts fresh.
      */
-    @Override
     public void reset() {
         pBoard = new char[Board.HEIGHT][Board.WIDTH];
         previousShots = new ArrayList<>();
