@@ -2,12 +2,6 @@ package battleship;
 
 import battleship.players._BattleshipPlayer;
 
-/**
- * @author Daniel R. Madison
- * @version 1.1
- *
- * The main driver of the program.
- */
 public class Battleship {
    public static void main(String[] args) {
         System.out.println("Testing");
